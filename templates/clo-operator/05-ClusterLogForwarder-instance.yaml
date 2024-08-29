@@ -1,0 +1,27 @@
+apiVersion: logging.openshift.io/v1
+kind: ClusterLogForwarder
+metadata:
+  name: instance
+  namespace: openshift-logging
+spec:
+  # outputs:
+  # - secret:
+  #      name: elasticsearch
+  #    syslog:
+  #      rfc: RFC5424
+  #    name: remote-elasticsearch
+  #    type: elasticsearch
+  #    url: 'remote.example.org:9200'
+ pipelines:
+    # - name: audit-logs
+    #   inputRefs:
+    #     - audit
+    #   outputRefs:
+    #     - rsyslog-bastion
+    - name: default
+      inputRefs:
+        - application
+        - infrastructure
+        - audit
+      outputRefs:
+        - default

@@ -1,0 +1,30 @@
+loki:
+  # Configuration for the Loki Querier component
+  querier:
+    resources:
+      requests:
+        cpu: "500m"        # Request half of a CPU core
+        memory: "1Gi"      # Request 1Gi of memory
+      limits:
+        cpu: "1"           # Limit to 1 CPU core
+        memory: "2Gi"      # Limit to 2Gi of memory
+
+  # Configuration for the Loki Ingester component
+  ingester:
+    resources:
+      requests:
+        cpu: "1"           # Request 1 CPU core
+        memory: "2Gi"      # Request 2Gi of memory
+      limits:
+        cpu: "2"           # Limit to 2 CPU cores
+        memory: "4Gi"      # Limit to 4Gi of memory
+
+  # Configuration for the Loki Compactor component
+  compactor:
+    resources:
+      requests:
+        cpu: "500m"        # Request half of a CPU core
+        memory: "1Gi"      # Request 1Gi of memory
+      limits:
+        cpu: "1"           # Limit to 1 CPU core
+        memory: "2Gi"      # Limit to 2Gi of memory
